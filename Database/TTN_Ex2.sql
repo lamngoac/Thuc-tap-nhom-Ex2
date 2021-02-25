@@ -1,11 +1,6 @@
-﻿use TTN_Bai2
+﻿use TTN_Ex2
 
 go
-
-create table MONHOC(
-	MaMH char(10) primary key,
-	TenMH nvarchar(50)
-) 
 
 create table GIAOVIEN(
 	MaGV char(10) primary key,
@@ -25,8 +20,8 @@ create table SINHVIEN(
 )
 
 create table LOP(
-	MaLop char(10) primary key,
-	MaMH char(10) references MONHOC(MaMH),
+	MaLop char(10),
+	MonHoc nvarchar(50),
 	MaGV char(10) references GIAOVIEN(MaGV),
 	MaSV char(10) references SINHVIEN(MaSV)
 )
@@ -71,15 +66,35 @@ values('SV0006',N'Bùi Doãn Hưng',N'Nam','2000-11-22',N'Hà Nội');
 insert into SINHVIEN(MaSV,TenSV,GioiTinh,NgaySinh,DiaChi)
 values('SV0007',N'Vũ Anh Tú',N'Nam','2000-03-31',N'Hà Nội');
 
-select * from MONHOC;
+select *from LOP;
 
-insert into MONHOC(MaMH, TenMH)
-values('MH0001',N'Toán');
-insert into MONHOC(MaMH, TenMH)
-values('MH0002',N'Ngữ Văn');
-insert into MONHOC(MaMH, TenMH)
-values('MH0003',N'Lý');
-insert into MONHOC(MaMH, TenMH)
-values('MH0004',N'Hóa ');
-insert into MONHOC(MaMH, TenMH)
-values('MH0005',N'Sinh');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0001',N'Toán','GV0001','SV0001');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0001',N'Toán','GV0001','SV0002');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0001',N'Toán','GV0001','SV0003');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0001',N'Toán','GV0001','SV0004');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0001',N'Toán','GV0001','SV0005');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0001',N'Toán','GV0001','SV0006');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0001',N'Toán','GV0001','SV0007');
+
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0002',N'Ngữ Văn','GV0002','SV0001');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0002',N'Ngữ Văn','GV0002','SV0002');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0002',N'Ngữ Văn','GV0002','SV0003');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0002',N'Ngữ Văn','GV0002','SV0004');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0002',N'Ngữ Văn','GV0002','SV0005');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0002',N'Ngữ Văn','GV0002','SV0006');
+insert into LOP(MaLop,MonHoc,MaGV,MaSV)
+values('LP0002',N'Ngữ Văn','GV0002','SV0007');
+
