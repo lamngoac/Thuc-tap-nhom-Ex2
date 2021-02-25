@@ -1,10 +1,10 @@
-﻿use QLSV_Ex2
+﻿use TTN_Bai2
+
 go
 
 create table MONHOC(
 	MaMH char(10) primary key,
-	TenMH nvarchar(50),
-	TC int default(3) 
+	TenMH nvarchar(50)
 ) 
 
 create table GIAOVIEN(
@@ -24,12 +24,11 @@ create table SINHVIEN(
 	DiaChi nvarchar(50),
 )
 
-create table DIEM(
+create table LOP(
+	MaLop char(10) primary key,
 	MaMH char(10) references MONHOC(MaMH),
 	MaGV char(10) references GIAOVIEN(MaGV),
-	MaSV char(10) references SINHVIEN(MaSV),
-	DiemThi1 int,
-	DiemThi2 int
+	MaSV char(10) references SINHVIEN(MaSV)
 )
 
 select * from GIAOVIEN;
@@ -59,7 +58,6 @@ select * from SINHVIEN;
 
 insert into SINHVIEN(MaSV,TenSV,GioiTinh,NgaySinh,DiaChi)
 values('SV0001',N'Nguyễn Hoàng Lam',N'Nam','2000-06-23',N'Hải Phòng');
-
 insert into SINHVIEN(MaSV,TenSV,GioiTinh,NgaySinh,DiaChi)
 values('SV0002',N'Mạc Trung Kiên',N'Nam','2000-09-24',N'Hải Phòng');
 insert into SINHVIEN(MaSV,TenSV,GioiTinh,NgaySinh,DiaChi)
@@ -75,17 +73,13 @@ values('SV0007',N'Vũ Anh Tú',N'Nam','2000-03-31',N'Hà Nội');
 
 select * from MONHOC;
 
-insert into MONHOC(MaMH, TenMH, TC)
-values('MH0001',N'Toán',3);
-
-insert into MONHOC(MaMH, TenMH, TC)
-values('MH0002',N'Ngữ Văn',3);
-
-insert into MONHOC(MaMH, TenMH, TC)
-values('MH0003',N'Lý',2);
-
-insert into MONHOC(MaMH, TenMH, TC)
-values('MH0004',N'Hóa ',2);
-
-insert into MONHOC(MaMH, TenMH, TC)
-values('MH0005',N'Sinh',2);
+insert into MONHOC(MaMH, TenMH)
+values('MH0001',N'Toán');
+insert into MONHOC(MaMH, TenMH)
+values('MH0002',N'Ngữ Văn');
+insert into MONHOC(MaMH, TenMH)
+values('MH0003',N'Lý');
+insert into MONHOC(MaMH, TenMH)
+values('MH0004',N'Hóa ');
+insert into MONHOC(MaMH, TenMH)
+values('MH0005',N'Sinh');
