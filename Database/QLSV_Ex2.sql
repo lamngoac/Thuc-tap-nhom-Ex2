@@ -73,3 +73,19 @@ values('SV0006',N'Bùi Doãn Hưng',N'Nam','2000-11-22',N'Hà Nội');
 insert into SINHVIEN(MaSV,TenSV,GioiTinh,NgaySinh,DiaChi)
 values('SV0007',N'Vũ Anh Tú',N'Nam','2000-03-31',N'Hà Nội');
 
+select * from MONHOC;
+
+insert into MONHOC(MaMH, TenMH, TC)
+values('MH0001',N'Toán',3);
+
+insert into MONHOC(MaMH, TenMH, TC)
+values('MH0002',N'Ngữ Văn',3);
+
+insert into MONHOC(MaMH, TenMH, TC)
+values('MH0003',N'Lý',2);
+
+insert into MONHOC(MaMH, TenMH, TC)
+values('MH0004',N'Hóa ',2);
+
+insert into MONHOC(MaMH, TenMH, TC)
+values('MH0005',N'Sinh',2);
