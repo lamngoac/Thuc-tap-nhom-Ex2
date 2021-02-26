@@ -11,3 +11,17 @@ E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
 E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQuanLy.resources
 E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLHocSinh.resources
 E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLGiaoVien.resources
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe.config
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.pdb
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmDangNhap.resources
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLGiaoVien.resources
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLHocSinh.resources
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQuanLy.resources
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.exe
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemGiaoVien.resources
