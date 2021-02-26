@@ -25,3 +25,4 @@ C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.
 C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.exe
 C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
 C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemGiaoVien.resources
+C:\Users\Admin\Documents\GitHub\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemHocSinh.resources

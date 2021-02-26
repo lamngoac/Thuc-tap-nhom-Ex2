@@ -145,3 +145,40 @@ begin
 		else begin return 0 end;
 end
 
+create procedure selectAllHS
+as
+	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh
+	from HOCSINH
+go
+exec selectAllHS
+create procedure selectHSById @Ma char(10)
+as
+begin
+
+	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh
+	from HOCSINH
+	where MaHS = @Ma
+
+end
+
+create procedure ThemMoiHS 
+	@TenHS nvarchar(50),
+	@NS datetime,
+	@DC nvarchar(50),
+	@GT char(3)
+as
+begin
+insert into HOCSINH
+	(
+		MaHS,TenHS,NgaySinh,DiaChi,GioiTinh
+	)values(
+		'HS' + cast(next value for giaovienSeq as char(10)),
+		@TenHS,
+		@NS,
+		@DC,
+		@GT
+		);
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end

@@ -21,5 +21,26 @@ namespace Giao_dien
         {
             this.Close();
         }
+
+        private void frmQLHocSinh_Load(object sender, EventArgs e)
+        {
+            LoadHS();
+        }
+        private void LoadHS()
+        {
+            dgvHocSinh.DataSource = new CSDL().SelectData("exec selectAllHS");
+
+            dgvHocSinh.Columns["MaHS"].HeaderText = "Mã HS";
+            dgvHocSinh.Columns["TenHS"].HeaderText = "Tên HS";
+            dgvHocSinh.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+            dgvHocSinh.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            dgvHocSinh.Columns["GioiTinh"].HeaderText = "Giới Tính";
+        }
+
+        private void btnHSThem_Click(object sender, EventArgs e)
+        {
+            new ThemHocSinh(null).ShowDialog();
+            LoadHS();
+        }
     }
 }
