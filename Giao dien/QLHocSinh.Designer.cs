@@ -42,12 +42,13 @@
             // 
             this.dgvHocSinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHocSinh.Location = new System.Drawing.Point(219, 294);
-            this.dgvHocSinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvHocSinh.Location = new System.Drawing.Point(164, 257);
+            this.dgvHocSinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvHocSinh.Name = "dgvHocSinh";
             this.dgvHocSinh.RowHeadersWidth = 51;
-            this.dgvHocSinh.Size = new System.Drawing.Size(1287, 318);
+            this.dgvHocSinh.Size = new System.Drawing.Size(965, 278);
             this.dgvHocSinh.TabIndex = 3;
+            this.dgvHocSinh.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHocSinh_CellDoubleClick);
             // 
             // cbbHSDanhSach
             // 
@@ -56,37 +57,37 @@
             "Mã học sinh",
             "Tên học sinh",
             "Mã lớp theo học"});
-            this.cbbHSDanhSach.Location = new System.Drawing.Point(219, 57);
-            this.cbbHSDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbHSDanhSach.Location = new System.Drawing.Point(164, 50);
+            this.cbbHSDanhSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbHSDanhSach.Name = "cbbHSDanhSach";
-            this.cbbHSDanhSach.Size = new System.Drawing.Size(160, 24);
+            this.cbbHSDanhSach.Size = new System.Drawing.Size(121, 22);
             this.cbbHSDanhSach.TabIndex = 0;
             // 
             // txbHSThongTin
             // 
-            this.txbHSThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbHSThongTin.Location = new System.Drawing.Point(469, 54);
-            this.txbHSThongTin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbHSThongTin.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbHSThongTin.Location = new System.Drawing.Point(352, 47);
+            this.txbHSThongTin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbHSThongTin.Name = "txbHSThongTin";
-            this.txbHSThongTin.Size = new System.Drawing.Size(417, 26);
+            this.txbHSThongTin.Size = new System.Drawing.Size(314, 23);
             this.txbHSThongTin.TabIndex = 1;
             // 
             // btnHSTimKiem
             // 
-            this.btnHSTimKiem.Location = new System.Drawing.Point(991, 49);
-            this.btnHSTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHSTimKiem.Location = new System.Drawing.Point(743, 43);
+            this.btnHSTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHSTimKiem.Name = "btnHSTimKiem";
-            this.btnHSTimKiem.Size = new System.Drawing.Size(139, 37);
+            this.btnHSTimKiem.Size = new System.Drawing.Size(104, 32);
             this.btnHSTimKiem.TabIndex = 2;
             this.btnHSTimKiem.Text = "Tìm kiếm";
             this.btnHSTimKiem.UseVisualStyleBackColor = true;
             // 
             // btnHSThem
             // 
-            this.btnHSThem.Location = new System.Drawing.Point(448, 721);
-            this.btnHSThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHSThem.Location = new System.Drawing.Point(336, 631);
+            this.btnHSThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHSThem.Name = "btnHSThem";
-            this.btnHSThem.Size = new System.Drawing.Size(139, 37);
+            this.btnHSThem.Size = new System.Drawing.Size(104, 32);
             this.btnHSThem.TabIndex = 4;
             this.btnHSThem.Text = "Thêm";
             this.btnHSThem.UseVisualStyleBackColor = true;
@@ -94,22 +95,23 @@
             // 
             // btnHSXoa
             // 
-            this.btnHSXoa.Location = new System.Drawing.Point(1061, 721);
-            this.btnHSXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHSXoa.Location = new System.Drawing.Point(796, 631);
+            this.btnHSXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHSXoa.Name = "btnHSXoa";
-            this.btnHSXoa.Size = new System.Drawing.Size(139, 37);
+            this.btnHSXoa.Size = new System.Drawing.Size(104, 32);
             this.btnHSXoa.TabIndex = 5;
             this.btnHSXoa.Text = "Xóa";
             this.btnHSXoa.UseVisualStyleBackColor = true;
+            this.btnHSXoa.Click += new System.EventHandler(this.btnHSXoa_Click);
             // 
             // btnHSQuayLai
             // 
             this.btnHSQuayLai.BackColor = System.Drawing.Color.Crimson;
             this.btnHSQuayLai.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHSQuayLai.Location = new System.Drawing.Point(1489, 49);
-            this.btnHSQuayLai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHSQuayLai.Location = new System.Drawing.Point(1117, 43);
+            this.btnHSQuayLai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHSQuayLai.Name = "btnHSQuayLai";
-            this.btnHSQuayLai.Size = new System.Drawing.Size(139, 37);
+            this.btnHSQuayLai.Size = new System.Drawing.Size(104, 32);
             this.btnHSQuayLai.TabIndex = 6;
             this.btnHSQuayLai.Text = "Quay lại";
             this.btnHSQuayLai.UseVisualStyleBackColor = false;
@@ -118,11 +120,11 @@
             // frmQLHocSinh
             // 
             this.AcceptButton = this.btnHSTimKiem;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.CancelButton = this.btnHSQuayLai;
-            this.ClientSize = new System.Drawing.Size(1684, 932);
+            this.ClientSize = new System.Drawing.Size(1263, 816);
             this.Controls.Add(this.btnHSXoa);
             this.Controls.Add(this.btnHSThem);
             this.Controls.Add(this.btnHSQuayLai);
@@ -130,7 +132,7 @@
             this.Controls.Add(this.txbHSThongTin);
             this.Controls.Add(this.cbbHSDanhSach);
             this.Controls.Add(this.dgvHocSinh);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmQLHocSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý học sinh";

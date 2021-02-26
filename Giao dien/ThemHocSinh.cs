@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,37 @@ namespace Giao_dien
             InitializeComponent();
         }
         private string mhs;
+
+
+
+        private void ThemHocSinh_Load(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Mã SV nhận được: " + msv);
+            CSDL db = new CSDL();
+            if (!string.IsNullOrEmpty(mhs))
+            {
+                this.Text = "Cập nhật thông tin sinh viên";
+
+                var r = new CSDL().Select(string.Format("selectHSById '" + mhs + "'"));
+                //MessageBox.Show(r[0].ToString());
+
+                txtTenHS.Text = r["TenHS"].ToString();
+                //mtbNS.Text = r["NgaySinh"].ToString();
+                dtpBirthday.Value = DateTime.ParseExact(r["NgaySinh"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                txtDC.Text = r["DiaChi"].ToString();
+                if (r["GioiTinh"].ToString() == "Nam")
+                {
+                    rbtNam.Checked = true;
+                }
+                else
+                {
+                    rbtNu.Checked = true;
+                }
+                //cbTenNGS.SelectedText = r["TenNGS"].ToString();
+                //cbTenPB.SelectedText = r["TenPB"].ToString();
+            }
+
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {

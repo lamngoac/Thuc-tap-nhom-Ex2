@@ -22,8 +22,8 @@ create table HOCSINH(
 create table LOP(
 	MaLop char(10),
 	MonHoc nvarchar(50),
-	MaGV char(10) references GIAOVIEN(MaGV),
-	MaHS char(10) references HOCSINH(MaHS)
+	MaGV char(10) references GIAOVIEN(MaGV) ON DELETE CASCADE,
+	MaHS char(10) references HOCSINH(MaHS) ON DELETE CASCADE
 )
 
 select * from GIAOVIEN;
@@ -103,6 +103,7 @@ create sequence giaovienSeq
 	increment by 1; --moi lan tang 1 don vi
 ----------------------------------------------------------------------------------------------------
 	select next value for giaovienSeq
+	go
 
 create procedure selectAllGV
 as
@@ -110,7 +111,7 @@ as
 	from GIAOVIEN GV
 go
 exec selectALlGV
-
+go
 create procedure selectGVByID @MaGV char(10)
 as
 begin
@@ -119,6 +120,7 @@ begin
 	where GV.MaGV = @MaGV
 end
 exec selectGVByID 'GV0001'
+go
 create procedure ThemMoiGV
 	@MaGV char(10),
 	@TenGV nvarchar(50),
@@ -144,13 +146,14 @@ begin
 		if @@ROWCOUNT > 0 begin return 1 end
 		else begin return 0 end;
 end
-
+go
 create procedure selectAllHS
 as
 	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh
 	from HOCSINH
 go
 exec selectAllHS
+go
 create procedure selectHSById @Ma char(10)
 as
 begin
@@ -160,7 +163,7 @@ begin
 	where MaHS = @Ma
 
 end
-
+go
 create procedure ThemMoiHS 
 	@TenHS nvarchar(50),
 	@NS datetime,
@@ -181,4 +184,28 @@ insert into HOCSINH
 
 		if @@ROWCOUNT > 0 begin return 1 end
 		else begin return 0 end;
+end
+
+
+go
+
+create procedure UpdateHS
+	@MaHS char(10),
+	@TenHS nvarchar(45),
+	@NS datetime,
+	@DC nvarchar(45),
+	@GT char(3)
+as 
+begin
+	update HOCSINH
+	set 
+		TenHS = @TenHS,
+		NgaySinh = @NS,
+		DiaChi = @DC,
+		GioiTinh = @GT
+	where MaHS = @MaHS;
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+
 end

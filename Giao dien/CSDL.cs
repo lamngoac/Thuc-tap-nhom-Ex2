@@ -12,7 +12,7 @@ namespace Giao_dien
     public class CSDL
     {
 
-        private string connectionString = @"Data Source=KIENNEIK\SQLEXPRESS01;Initial Catalog=TTN_Ex2;Integrated Security=True";
+        private string connectionString = @"Data Source=LAPCUATUNG\SQLEXPRESS;Initial Catalog=TTN_Ex2;Integrated Security=True";
         private SqlConnection conn;
 
         //private string sql;
@@ -110,6 +110,29 @@ namespace Giao_dien
             {
                 conn.Open();
                 string sql = "DELETE From GIAOVIEN where MaGV = '" + magv + "'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                check = true;
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                check = false;
+                throw;
+            }
+
+
+            return check;
+        }
+
+
+        public Boolean del_dataHS(String mahs)
+        {
+            bool check = false;
+            try
+            {
+                conn.Open();
+                string sql = "DELETE From HOCSINH where MaHS = '" + mahs + "'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
                 check = true;

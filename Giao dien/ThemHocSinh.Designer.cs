@@ -181,6 +181,8 @@ namespace Giao_dien
             this.Controls.Add(this.hsLabel);
             this.Name = "ThemHocSinh";
             this.Text = "ThemHocSinh";
+            this.Load += new System.EventHandler(this.ThemHocSinh_Load);
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
