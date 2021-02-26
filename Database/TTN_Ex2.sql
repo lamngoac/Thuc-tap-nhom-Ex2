@@ -98,3 +98,50 @@ values('LP0002',N'Ngữ Văn','GV0002','HS0006');
 insert into LOP(MaLop,MonHoc,MaGV,MaHS)
 values('LP0002',N'Ngữ Văn','GV0002','HS0007');
 
+create sequence giaovienSeq
+	start with 1000 --bat dau tu 1000
+	increment by 1; --moi lan tang 1 don vi
+----------------------------------------------------------------------------------------------------
+	select next value for giaovienSeq
+
+create procedure selectAllGV
+as
+	select distinct GV.MaGV, GV.TenGV, convert(varchar(10),GV.NgaySinh,103) as NgaySinh, GV.DiaChi, GV.GioiTinh, GV.HocVan
+	from GIAOVIEN GV
+go
+exec selectALlGV
+
+create procedure selectGVByID @MaGV char(10)
+as
+begin
+	select distinct GV.MaGV, GV.TenGV, convert(varchar(10),GV.NgaySinh,103) as NgaySinh, GV.DiaChi, GV.GioiTinh, GV.HocVan
+	from GIAOVIEN GV
+	where GV.MaGV = @MaGV
+end
+exec selectGVByID 'GV0001'
+create procedure ThemMoiGV
+	@MaGV char(10),
+	@TenGV nvarchar(50),
+	@NS datetime,
+	@DC nvarchar(50),
+	@GT char(3),
+	@HocVan nvarchar(50)
+
+as 
+begin
+	insert into GIAOVIEN
+	(
+		MaGV,TenGV,NgaySinh,DiaChi,GioiTinh,HocVan
+	)values(
+		'GV' + cast(next value for giaovienSeq as char(10)),
+		@TenGV,
+		@NS,
+		@DC,
+		@GT,
+		@HocVan
+		);
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+
