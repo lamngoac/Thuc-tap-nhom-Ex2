@@ -1,0 +1,13 @@
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe.config
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.pdb
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csprojAssemblyReference.cache
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmDangNhap.resources
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.Properties.Resources.resources
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.GenerateResource.cache
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.CoreCompileInputs.cache
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.exe
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQuanLy.resources
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLHocSinh.resources
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLGiaoVien.resources
