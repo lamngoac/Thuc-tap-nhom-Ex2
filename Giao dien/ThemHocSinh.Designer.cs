@@ -41,6 +41,8 @@ namespace Giao_dien
             this.rbtNam = new System.Windows.Forms.RadioButton();
             this.txtTenHS = new System.Windows.Forms.TextBox();
             this.hsLabel = new System.Windows.Forms.Label();
+            this.cbMaLop = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtpBirthday
@@ -162,11 +164,31 @@ namespace Giao_dien
             this.hsLabel.TabIndex = 36;
             this.hsLabel.Text = "THÔNG TIN HỌC SINH";
             // 
+            // cbMaLop
+            // 
+            this.cbMaLop.FormattingEnabled = true;
+            this.cbMaLop.Location = new System.Drawing.Point(312, 370);
+            this.cbMaLop.Name = "cbMaLop";
+            this.cbMaLop.Size = new System.Drawing.Size(295, 24);
+            this.cbMaLop.TabIndex = 42;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(172, 379);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 17);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Mã Lớp";
+            // 
             // ThemHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 562);
+            this.Controls.Add(this.cbMaLop);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dtpBirthday);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.rbtNu);
@@ -182,7 +204,6 @@ namespace Giao_dien
             this.Name = "ThemHocSinh";
             this.Text = "ThemHocSinh";
             this.Load += new System.EventHandler(this.ThemHocSinh_Load);
-
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +223,7 @@ namespace Giao_dien
         private System.Windows.Forms.RadioButton rbtNam;
         private System.Windows.Forms.TextBox txtTenHS;
         private System.Windows.Forms.Label hsLabel;
+        private System.Windows.Forms.ComboBox cbMaLop;
+        private System.Windows.Forms.Label label6;
     }
 }

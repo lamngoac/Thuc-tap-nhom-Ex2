@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,37 @@ namespace Giao_dien
 
         private void ThemGiaoVien_Load(object sender, EventArgs e)
         {
+            CSDL csdl = new CSDL();
+            string getAllMaLop = "SELECT MaLop FROM LOP";
+            DataTable maLopTable = csdl.SelectData(getAllMaLop);
+            cbMaLop.DataSource = maLopTable.Copy();
+            cbMaLop.DisplayMember = "MaLop";
+            cbMaLop.ValueMember = "MaLop";
+            if (string.IsNullOrEmpty(mgv))
+            {
+                this.Text = "Thêm mới nhân viên";
+            }
+            else
+            {
+                this.Text = "Cập nhật thông tin sinh viên";
 
+                var r = new CSDL().Select(string.Format("selectGVById '" + mgv + "'"));
+
+                txtTenGV.Text = r["TenGV"].ToString();
+                dtpBirthday.Value = DateTime.ParseExact(r["NgaySinh"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                txtDC.Text = r["DiaChi"].ToString();
+                if (r["GioiTinh"].ToString() == "Nam")
+                {
+                    rbtNam.Checked = true;
+                }
+                else
+                {
+                    rbtNu.Checked = true;
+                }
+                txtHocVan.Text = r["HocVan"].ToString();
+                txtDayMon.Text = r["DayMon"].ToString();
+
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,6 +68,9 @@ namespace Giao_dien
             string DiaChi = txtDC.Text;
             string GioiTinh = rbtNam.Checked ? "Nam" : "Nu";
             string HocVan = txtHocVan.Text;
+            string DayMon = txtDayMon.Text;
+            DataRowView drvMaLop = (DataRowView)cbMaLop.SelectedItem;
+            string MaLop = drvMaLop.Row.Field<string>("MaLop");
 
             List<CustomParameter> lstPara = new List<CustomParameter>();
 
@@ -82,6 +116,16 @@ namespace Giao_dien
             {
                 key = "@HocVan",
                 value = HocVan
+            });
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@DayMon",
+                value = DayMon
+            });
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@MaLop",
+                value = MaLop
             });
 
             var rs = new CSDL().ExeCute(sql, lstPara);

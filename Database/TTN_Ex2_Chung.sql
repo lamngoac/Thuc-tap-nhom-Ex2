@@ -83,3 +83,95 @@ values('HS0007',N'Vũ Anh Tú',N'Nam','2000-03-31',N'Hà Nội','LP0002');
 select * from HOCSINH;
 
 --select * from HOCSINH where MaLop = 'LP0001';
+
+create sequence giaovienSeq
+	start with 1000 --bat dau tu 1000
+	increment by 1; --moi lan tang 1 don vi
+		select next value for giaovienSeq
+
+create procedure selectAllGV
+as
+	select MaGV,TenGV, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh, HocVan, DayMon,MaLop
+	from GIAOVIEN 
+go
+exec selectALlGV
+
+alter procedure selectGVByID @MaGV char(10)
+as
+begin
+	select MaGV,TenGV, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh, HocVan, DayMon,MaLop
+	from GIAOVIEN 
+	where @MaGV = MaGV
+end
+
+exec selectGVByID 'GV0001'
+create procedure ThemMoiGV
+	@TenGV nvarchar(50),
+	@NS datetime,
+	@DC nvarchar(50),
+	@GT char(3),
+	@HocVan nvarchar(50),
+	@DayMon nvarchar(50),
+	@MaLop char(10)
+
+as 
+begin
+	insert into GIAOVIEN
+	(
+		MaGV,TenGV,NgaySinh,DiaChi,GioiTinh,HocVan,DayMon,MaLop
+	)values(
+		'GV' + cast(next value for giaovienSeq as char(10)),
+		@TenGV,
+		@NS,
+		@DC,
+		@GT,
+		@HocVan,
+		@DayMon,
+		@MaLop
+		);
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+
+
+create procedure selectAllHS
+as
+	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh,MaLop
+	from HOCSINH
+go
+exec selectAllHS
+go
+create procedure selectHSById @Ma char(10)
+as
+begin
+
+	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh, MaLop
+	from HOCSINH
+	where MaHS = @Ma
+
+end
+go
+create procedure ThemMoiHS 
+	@TenHS nvarchar(50),
+	@NS datetime,
+	@DC nvarchar(50),
+	@GT char(3),
+	@MaLop char(10)
+as
+begin
+insert into HOCSINH
+	(
+		MaHS,TenHS,NgaySinh,DiaChi,GioiTinh,MaLop
+	)values(
+		'HS' + cast(next value for giaovienSeq as char(10)),
+		@TenHS,
+		@NS,
+		@DC,
+		@GT,
+		@MaLop
+		);
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end

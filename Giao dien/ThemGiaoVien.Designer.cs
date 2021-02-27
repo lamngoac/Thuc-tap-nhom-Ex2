@@ -43,18 +43,22 @@ namespace Giao_dien
             this.rbtNam = new System.Windows.Forms.RadioButton();
             this.txtTenGV = new System.Windows.Forms.TextBox();
             this.gvLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDayMon = new System.Windows.Forms.TextBox();
+            this.cbMaLop = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtpBirthday
             // 
-            this.dtpBirthday.Location = new System.Drawing.Point(328, 189);
+            this.dtpBirthday.Location = new System.Drawing.Point(328, 195);
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(295, 22);
             this.dtpBirthday.TabIndex = 20;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(514, 477);
+            this.btnCancel.Location = new System.Drawing.Point(523, 566);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 27);
@@ -77,7 +81,7 @@ namespace Giao_dien
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(188, 331);
+            this.label8.Location = new System.Drawing.Point(188, 333);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 17);
@@ -101,12 +105,12 @@ namespace Giao_dien
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 17);
-            this.label4.TabIndex = 31;
+            this.label4.TabIndex = 15;
             this.label4.Text = "Học Vấn";
             // 
             // txtHocVan
             // 
-            this.txtHocVan.Location = new System.Drawing.Point(331, 384);
+            this.txtHocVan.Location = new System.Drawing.Point(328, 384);
             this.txtHocVan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtHocVan.Name = "txtHocVan";
             this.txtHocVan.Size = new System.Drawing.Size(295, 22);
@@ -124,7 +128,7 @@ namespace Giao_dien
             // 
             // txtDC
             // 
-            this.txtDC.Location = new System.Drawing.Point(328, 260);
+            this.txtDC.Location = new System.Drawing.Point(328, 262);
             this.txtDC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDC.Name = "txtDC";
             this.txtDC.Size = new System.Drawing.Size(295, 22);
@@ -142,7 +146,7 @@ namespace Giao_dien
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(175, 477);
+            this.btnSave.Location = new System.Drawing.Point(184, 566);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 27);
@@ -166,11 +170,11 @@ namespace Giao_dien
             // 
             // txtTenGV
             // 
-            this.txtTenGV.Location = new System.Drawing.Point(322, 129);
+            this.txtTenGV.Location = new System.Drawing.Point(328, 132);
             this.txtTenGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenGV.Name = "txtTenGV";
             this.txtTenGV.Size = new System.Drawing.Size(295, 22);
-            this.txtTenGV.TabIndex = 19;
+            this.txtTenGV.TabIndex = 17;
             // 
             // gvLabel
             // 
@@ -179,15 +183,55 @@ namespace Giao_dien
             this.gvLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gvLabel.Name = "gvLabel";
             this.gvLabel.Size = new System.Drawing.Size(158, 17);
-            this.gvLabel.TabIndex = 18;
+            this.gvLabel.TabIndex = 2;
             this.gvLabel.Text = "THÔNG TIN GiÁO VIÊN";
             this.gvLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(188, 444);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Dạy Môn";
+            // 
+            // txtDayMon
+            // 
+            this.txtDayMon.Location = new System.Drawing.Point(328, 439);
+            this.txtDayMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDayMon.Name = "txtDayMon";
+            this.txtDayMon.Size = new System.Drawing.Size(295, 22);
+            this.txtDayMon.TabIndex = 25;
+            // 
+            // cbMaLop
+            // 
+            this.cbMaLop.FormattingEnabled = true;
+            this.cbMaLop.Location = new System.Drawing.Point(328, 495);
+            this.cbMaLop.Name = "cbMaLop";
+            this.cbMaLop.Size = new System.Drawing.Size(295, 24);
+            this.cbMaLop.TabIndex = 26;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(188, 504);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 17);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Mã Lớp";
             // 
             // ThemGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 691);
+            this.Controls.Add(this.cbMaLop);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtDayMon);
             this.Controls.Add(this.dtpBirthday);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.rbtNu);
@@ -226,5 +270,9 @@ namespace Giao_dien
         private System.Windows.Forms.RadioButton rbtNam;
         private System.Windows.Forms.TextBox txtTenGV;
         private System.Windows.Forms.Label gvLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDayMon;
+        private System.Windows.Forms.ComboBox cbMaLop;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -25,7 +25,12 @@ namespace Giao_dien
         private void ThemHocSinh_Load(object sender, EventArgs e)
         {
             //MessageBox.Show("Mã SV nhận được: " + msv);
-            CSDL db = new CSDL();
+            CSDL csdl = new CSDL();
+            string getAllMaLop = "SELECT MaLop FROM LOP";
+            DataTable maLopTable = csdl.SelectData(getAllMaLop);
+            cbMaLop.DataSource = maLopTable.Copy();
+            cbMaLop.DisplayMember = "MaLop";
+            cbMaLop.ValueMember = "MaLop";
             if (!string.IsNullOrEmpty(mhs))
             {
                 this.Text = "Cập nhật thông tin sinh viên";
@@ -48,6 +53,10 @@ namespace Giao_dien
                 //cbTenNGS.SelectedText = r["TenNGS"].ToString();
                 //cbTenPB.SelectedText = r["TenPB"].ToString();
             }
+            else
+            {
+                this.Text = "Thêm mới nhân viên";
+            }
 
         }
 
@@ -58,6 +67,8 @@ namespace Giao_dien
             DateTime NgaySinh = dtpBirthday.Value;
             string DiaChi = txtDC.Text;
             string GioiTinh = rbtNam.Checked ? "Nam" : "Nu";
+            DataRowView drvMaLop = (DataRowView)cbMaLop.SelectedItem;
+            string MaLop = drvMaLop.Row.Field<string>("MaLop");
 
             List<CustomParameter> lstPara = new List<CustomParameter>();
 
@@ -97,6 +108,11 @@ namespace Giao_dien
             {
                 key = "@GT",
                 value = GioiTinh
+            });
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@MaLop",
+                value = MaLop
             });
 
 
