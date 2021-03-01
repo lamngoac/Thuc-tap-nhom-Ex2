@@ -70,7 +70,6 @@ namespace Giao_dien
             var db = new CSDL();
             if (MessageBox.Show("Bạn muốn xóa học sinh " + dgvGiaoVien.CurrentRow.Cells["Tên GV"].Value.ToString() + " ?", "Warning!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-
                 var tenGV = dgvGiaoVien.CurrentRow.Cells["Tên GV"].Value.ToString();
                 var idGV = dgvGiaoVien.CurrentRow.Cells["Mã GV"].Value.ToString();
                 db.del_data(idGV);
@@ -96,9 +95,17 @@ namespace Giao_dien
             dtpGiaoVien.Value = new DateTime(1, 1, 2000);   
         }
 
-        
+        class GiaoVien
+        {
+
+        }
 
         private void dgvGiaoVien_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        }
+
+        private void dgvGiaoVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -112,16 +119,84 @@ namespace Giao_dien
                     //dgvGiaoVien.Columns["GioiTinh"].HeaderText = "Giới Tính";
                     //dgvGiaoVien.Columns["HocVan"].HeaderText = "Học Vấn";
                     //dtpGiaoVien.Value = DateTime.ParseExact(r["NgaySinh"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    dtpGiaoVien.Value =
+                    DateTime ngaysinh = Convert.ToDateTime(dtpGiaoVien.Text);
+                    string ngaysinhStr = ngaysinh.ToString("yyyyMMdd");
+
+                    //dtpGiaoVien.Value = DateTime.ParseExact(r["NgaySinh"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     //txtTensv.Text = dgvGiaoVien.CurrentRow.Cells[1].Value.ToString();
                     //txtNgaysinh.Text = dgvGiaoVien.CurrentRow.Cells[2].Value.ToString();
                     //txtDiachi.Text = dgvGiaoVien.CurrentRow.Cells[3].Value.ToString();
-                    
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            var db = new CSDL();
+
+            //string TenGV = txtTenGV.Text;
+            //DateTime NgaySinh = dtpBirthday.Value;
+            //string DiaChi = txtDC.Text;
+            //string GioiTinh = rbtNam.Checked ? "Nam" : "Nu";
+            //string HocVan = txtHocVan.Text;
+            //string DayMon = txtDayMon.Text;
+            string sql = "UpdateGV";
+            List<CustomParameter> lstPara = new List<CustomParameter>();
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@MaGV",
+                value = mgv
+            });
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@TenGV",
+                value = TenGV
+            });
+
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@NS",
+                value = NgaySinh.ToString("yyyy-MM-dd")
+            });
+
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@DC",
+                value = DiaChi
+            });
+
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@GT",
+                value = GioiTinh
+            });
+
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@HocVan",
+                value = HocVan
+            });
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@DayMon",
+                value = DayMon
+            });
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@MaLop",
+                value = MaLop
+            });
+
+            var rs = new CSDL().ExeCute(sql, lstPara);
+            if (rs == 1)
+            {
+                MessageBox.Show("Cập nhật thành công");
+                this.Dispose();
             }
         }
     }
