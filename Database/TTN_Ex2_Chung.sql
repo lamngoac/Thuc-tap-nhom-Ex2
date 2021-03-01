@@ -105,7 +105,7 @@ begin
 end
 
 exec selectGVByID 'GV0001'
-create procedure ThemMoiGV
+alter procedure ThemMoiGV
 	@TenGV nvarchar(50),
 	@NS datetime,
 	@DC nvarchar(50),
@@ -135,14 +135,14 @@ begin
 end
 
 
-create procedure selectAllHS
+alter procedure selectAllHS
 as
 	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh,MaLop
 	from HOCSINH
 go
 exec selectAllHS
 go
-create procedure selectHSById @Ma char(10)
+alter procedure selectHSById @Ma char(10)
 as
 begin
 
@@ -152,7 +152,7 @@ begin
 
 end
 go
-create procedure ThemMoiHS 
+alter procedure ThemMoiHS 
 	@TenHS nvarchar(50),
 	@NS datetime,
 	@DC nvarchar(50),
@@ -174,4 +174,28 @@ insert into HOCSINH
 
 		if @@ROWCOUNT > 0 begin return 1 end
 		else begin return 0 end;
+end
+
+
+alter procedure UpdateHS
+	@MaHS char(10),
+	@TenHS nvarchar(45),
+	@NS datetime,
+	@DC nvarchar(45),
+	@GT char(3),
+	@MaLop char(10)
+as 
+begin
+	update HOCSINH
+	set 
+		TenHS = @TenHS,
+		NgaySinh = @NS,
+		DiaChi = @DC,
+		GioiTinh = @GT,
+		MaLop=@MaLop
+	where MaHS = @MaHS;
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+
 end

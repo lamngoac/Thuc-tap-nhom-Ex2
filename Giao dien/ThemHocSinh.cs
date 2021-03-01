@@ -33,7 +33,7 @@ namespace Giao_dien
             cbMaLop.ValueMember = "MaLop";
             if (!string.IsNullOrEmpty(mhs))
             {
-                this.Text = "Cập nhật thông tin sinh viên";
+                this.Text = "Cập nhật thông tin học sinh";
 
                 var r = new CSDL().Select(string.Format("selectHSById '" + mhs + "'"));
                 //MessageBox.Show(r[0].ToString());

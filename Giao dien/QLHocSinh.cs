@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Giao_dien
@@ -56,9 +57,13 @@ namespace Giao_dien
         private void btnHSXoa_Click(object sender, EventArgs e)
         {
             var db = new CSDL();
-            db.del_dataHS(dgvHocSinh.CurrentRow.Cells["MaHS"].Value.ToString());
+            if (MessageBox.Show("Bạn muốn xóa học sinh " + dgvHocSinh.CurrentRow.Cells["TenHS"].Value.ToString() + " ?", "Warning!!!" ,MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes )
+            {
+                db.del_dataHS(dgvHocSinh.CurrentRow.Cells["MaHS"].Value.ToString());
+            }
+            
             // Hien thi mess thong bao
-            MessageBox.Show("Đã xóa sinh viên: " + dgvHocSinh.CurrentRow.Cells["TenHS"].Value.ToString());
+         
             LoadHS();
         }
     }

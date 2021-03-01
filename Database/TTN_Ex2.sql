@@ -189,12 +189,13 @@ end
 
 go
 
-create procedure UpdateHS
+alter procedure UpdateHS
 	@MaHS char(10),
 	@TenHS nvarchar(45),
 	@NS datetime,
 	@DC nvarchar(45),
-	@GT char(3)
+	@GT char(3),
+	@MaLop char(10)
 as 
 begin
 	update HOCSINH
@@ -202,7 +203,8 @@ begin
 		TenHS = @TenHS,
 		NgaySinh = @NS,
 		DiaChi = @DC,
-		GioiTinh = @GT
+		GioiTinh = @GT,
+		MaLop=@MaLop
 	where MaHS = @MaHS;
 
 		if @@ROWCOUNT > 0 begin return 1 end
