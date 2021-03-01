@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -122,17 +123,13 @@ namespace Giao_dien
                     GiaoVien gv = new GiaoVien();
                     gv.maGV = dgvGiaoVien.CurrentRow.Cells[0].Value.ToString();
                     txtTenGV.Text = dgvGiaoVien.CurrentRow.Cells[1].Value.ToString();
-                    txtNgaySinh.Text = dgvGiaoVien.CurrentRow.Cells[2].Value.ToString();
+                    gv.NgaySinh = DateTime.ParseExact(dgvGiaoVien.CurrentRow.Cells[2].Value.ToString().ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    txtNgaySinh.Value = gv.NgaySinh;
                     txtDiaChi.Text = dgvGiaoVien.CurrentRow.Cells[3].Value.ToString();
                     txtGioiTinh.Text = dgvGiaoVien.CurrentRow.Cells[4].Value.ToString();
-                    txtHocVan.Text = dgvGiaoVien.CurrentRow.Cells[5].Value.ToString();
+                    txtDayMon.Text = dgvGiaoVien.CurrentRow.Cells[5].Value.ToString();
+                    txtHocVan.Text = dgvGiaoVien.CurrentRow.Cells[6].Value.ToString();
                     //gv.MaLop = dgvGiaoVien.CurrentRow.Cells[6].Value.ToString();
-                    
-                    //dtpGiaoVien.Value = DateTime.ParseExact(r["NgaySinh"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    //DateTime ngaysinh = Convert.ToDateTime(txtNgaySinh.Text);
-                    //string ngaysinhStr = ngaysinh.ToString("yyyyMMdd");
-
-
                 }
             }
             catch (Exception ex)
