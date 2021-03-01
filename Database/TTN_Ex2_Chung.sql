@@ -216,5 +216,5 @@ begin
 end
 ----------------------------------------------
 
-exec UpdateGV 'GV0001',N'Đỗ Duy Hưng','Nam'	,'1997-01-01 00:00:00.000'	,N'Hà Nội'	,'Văn'	,N'Đại Học'	,'LP0001'    
+exec UpdateGV 'GV0001',N'Đỗ Duy Hưng','Nam'	,'1997-01-01'	,N'Hà Nội'	,'Văn'	,N'Đại Học'	,'LP0001'    
 

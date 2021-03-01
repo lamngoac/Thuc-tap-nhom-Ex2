@@ -36,8 +36,9 @@ namespace Giao_dien
             dgvGiaoVien.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
             dgvGiaoVien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
             dgvGiaoVien.Columns["GioiTinh"].HeaderText = "Giới Tính";
+            dgvGiaoVien.Columns["DayMon"].HeaderText = "Dạy Môn";
             dgvGiaoVien.Columns["HocVan"].HeaderText = "Học Vấn";
-
+            dgvGiaoVien.Columns["MaLop"].HeaderText = "Mã Lớp";
         }
 
         private void dgvGiaoVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -68,10 +69,10 @@ namespace Giao_dien
         private void btnGVXoa_Click(object sender, EventArgs e)
         {
             var db = new CSDL();
-            if (MessageBox.Show("Bạn muốn xóa học sinh " + dgvGiaoVien.CurrentRow.Cells["Tên GV"].Value.ToString() + " ?", "Warning!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn muốn xóa học sinh " + dgvGiaoVien.CurrentRow.Cells["TenGV"].Value.ToString() + " ?", "Warning!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                var tenGV = dgvGiaoVien.CurrentRow.Cells["Tên GV"].Value.ToString();
-                var idGV = dgvGiaoVien.CurrentRow.Cells["Mã GV"].Value.ToString();
+                var tenGV = dgvGiaoVien.CurrentRow.Cells["TenGV"].Value.ToString();
+                var idGV = dgvGiaoVien.CurrentRow.Cells["MaGV"].Value.ToString();
                 db.del_data(idGV);
                 MessageBox.Show("Đã xóa giáo viên : " + tenGV);
             }
@@ -84,20 +85,27 @@ namespace Giao_dien
 
         public void clearData()
         {
-            //var r = new CSDL().Select(string.Format("selectGVById '" + mgv + "'"));
-            //dtpGiaoVien.Value = DateTime.ParseExact(r["NgaySinh"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            //if (txtTenGV.Text != "" && )
             txtTenGV.Text = "";
             txtHocVan.Text = "";
             txtGioiTinh.Text = "";
             txtDiaChi.Text = "";
             txtDayMon.Text = "";
-            dtpGiaoVien.Value = new DateTime(1, 1, 2000);   
+            txtNgaySinh.Text = "";  
         }
 
         class GiaoVien
         {
+            public string maGV { get; set; }
+            public string tenGV { get; set; }
 
+            public string GioiTinh { get; set; }
+            public DateTime NgaySinh { get; set; }
+            public string DiaChi { get; set; }
+            public string DayMon { get; set; }
+
+            public string HocVan { get; set; }
+
+            public string MaLop { get; set; }
         }
 
         private void dgvGiaoVien_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -111,21 +119,19 @@ namespace Giao_dien
             {
                 if (dgvGiaoVien.CurrentRow.Index != -1)
                 {
-                    string maGV = dgvGiaoVien.CurrentRow.Cells[0].Value.ToString();
+                    GiaoVien gv = new GiaoVien();
+                    gv.maGV = dgvGiaoVien.CurrentRow.Cells[0].Value.ToString();
                     txtTenGV.Text = dgvGiaoVien.CurrentRow.Cells[1].Value.ToString();
-
-                    //dgvGiaoVien.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
-                    //dgvGiaoVien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
-                    //dgvGiaoVien.Columns["GioiTinh"].HeaderText = "Giới Tính";
-                    //dgvGiaoVien.Columns["HocVan"].HeaderText = "Học Vấn";
+                    txtNgaySinh.Text = dgvGiaoVien.CurrentRow.Cells[2].Value.ToString();
+                    txtDiaChi.Text = dgvGiaoVien.CurrentRow.Cells[3].Value.ToString();
+                    txtGioiTinh.Text = dgvGiaoVien.CurrentRow.Cells[4].Value.ToString();
+                    txtHocVan.Text = dgvGiaoVien.CurrentRow.Cells[5].Value.ToString();
+                    //gv.MaLop = dgvGiaoVien.CurrentRow.Cells[6].Value.ToString();
+                    
                     //dtpGiaoVien.Value = DateTime.ParseExact(r["NgaySinh"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    DateTime ngaysinh = Convert.ToDateTime(dtpGiaoVien.Text);
-                    string ngaysinhStr = ngaysinh.ToString("yyyyMMdd");
+                    //DateTime ngaysinh = Convert.ToDateTime(txtNgaySinh.Text);
+                    //string ngaysinhStr = ngaysinh.ToString("yyyyMMdd");
 
-                    //dtpGiaoVien.Value = DateTime.ParseExact(r["NgaySinh"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    //txtTensv.Text = dgvGiaoVien.CurrentRow.Cells[1].Value.ToString();
-                    //txtNgaysinh.Text = dgvGiaoVien.CurrentRow.Cells[2].Value.ToString();
-                    //txtDiachi.Text = dgvGiaoVien.CurrentRow.Cells[3].Value.ToString();
 
                 }
             }
@@ -138,13 +144,15 @@ namespace Giao_dien
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             var db = new CSDL();
-
-            //string TenGV = txtTenGV.Text;
-            //DateTime NgaySinh = dtpBirthday.Value;
-            //string DiaChi = txtDC.Text;
-            //string GioiTinh = rbtNam.Checked ? "Nam" : "Nu";
-            //string HocVan = txtHocVan.Text;
-            //string DayMon = txtDayMon.Text;
+            string mgv = dgvGiaoVien.CurrentRow.Cells[0].Value.ToString();
+            string TenGV = txtTenGV.Text;
+            DateTime NgaySinh = txtNgaySinh.Value;
+            string DiaChi = txtDiaChi.Text;
+            string GioiTinh = txtGioiTinh.Text;
+            string HocVan = txtHocVan.Text;
+            string DayMon = txtDayMon.Text;
+            string MaLop = dgvGiaoVien.CurrentRow.Cells[6].Value.ToString();
+            
             string sql = "UpdateGV";
             List<CustomParameter> lstPara = new List<CustomParameter>();
             lstPara.Add(new CustomParameter()

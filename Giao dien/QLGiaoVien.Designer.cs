@@ -42,7 +42,7 @@
             this.txtHocVan = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtDayMon = new System.Windows.Forms.TextBox();
-            this.dtpGiaoVien = new System.Windows.Forms.DateTimePicker();
+            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,14 +185,14 @@
             this.txtDayMon.Size = new System.Drawing.Size(118, 22);
             this.txtDayMon.TabIndex = 14;
             // 
-            // dtpGiaoVien
+            // txtNgaySinh
             // 
-            this.dtpGiaoVien.CustomFormat = "dd/MM/yyyy";
-            this.dtpGiaoVien.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpGiaoVien.Location = new System.Drawing.Point(876, 155);
-            this.dtpGiaoVien.Name = "dtpGiaoVien";
-            this.dtpGiaoVien.Size = new System.Drawing.Size(200, 22);
-            this.dtpGiaoVien.TabIndex = 15;
+            this.txtNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgaySinh.Location = new System.Drawing.Point(876, 155);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(200, 22);
+            this.txtNgaySinh.TabIndex = 15;
             // 
             // frmQLGiaoVien
             // 
@@ -202,7 +202,7 @@
             this.BackColor = System.Drawing.Color.Plum;
             this.CancelButton = this.btnGVQuayLai;
             this.ClientSize = new System.Drawing.Size(1702, 932);
-            this.Controls.Add(this.dtpGiaoVien);
+            this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.txtDayMon);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtHocVan);
@@ -244,6 +244,6 @@
         private System.Windows.Forms.TextBox txtHocVan;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtDayMon;
-        private System.Windows.Forms.DateTimePicker dtpGiaoVien;
+        private System.Windows.Forms.DateTimePicker txtNgaySinh;
     }
 }
