@@ -175,3 +175,45 @@ insert into HOCSINH
 		if @@ROWCOUNT > 0 begin return 1 end
 		else begin return 0 end;
 end
+
+/* GIAO VIEN*/
+create trigger deleteGV
+on GIAOVIEN
+for delete
+as 
+begin
+	delete MaLop, Ten Lop
+	where MaLop = deleted
+
+end
+
+
+create procedure UpdateGV
+	@MaGV char(10),
+	@TenGV nvarchar(50),
+	@GT char(3),
+	@NS datetime,
+	@DC nvarchar(50),
+	@MonDay nvarchar(50),
+	@HocVan nvarchar(50),
+	@MaLop char(10)
+as 
+begin
+	update GIAOVIEN
+	set 
+		TenGV = @TenGV,
+		GioiTinh = @GT,
+		NgaySinh = @NS,
+		DiaChi = @DC,
+		DayMon = @MonDay,
+		HocVan = @HocVan,
+		MaLop = @MaLop
+	where MaGV = @MaGV;
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+----------------------------------------------
+
+exec UpdateGV 'GV0001',N'Đỗ Duy Hưng','Nam'	,'1997-01-01 00:00:00.000'	,N'Hà Nội'	,'Văn'	,N'Đại Học'	,'LP0001'    
+

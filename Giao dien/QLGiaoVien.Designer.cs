@@ -36,6 +36,13 @@
             this.btnGVThem = new System.Windows.Forms.Button();
             this.btnGVXoa = new System.Windows.Forms.Button();
             this.refreshBTN = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtTenGV = new System.Windows.Forms.TextBox();
+            this.txtGioiTinh = new System.Windows.Forms.TextBox();
+            this.txtNgaySinh = new System.Windows.Forms.TextBox();
+            this.txtHocVan = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtDayMon = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +106,7 @@
             // 
             // btnGVThem
             // 
-            this.btnGVThem.Location = new System.Drawing.Point(448, 721);
+            this.btnGVThem.Location = new System.Drawing.Point(442, 687);
             this.btnGVThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnGVThem.Name = "btnGVThem";
             this.btnGVThem.Size = new System.Drawing.Size(139, 37);
@@ -110,7 +117,7 @@
             // 
             // btnGVXoa
             // 
-            this.btnGVXoa.Location = new System.Drawing.Point(1061, 721);
+            this.btnGVXoa.Location = new System.Drawing.Point(1055, 687);
             this.btnGVXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnGVXoa.Name = "btnGVXoa";
             this.btnGVXoa.Size = new System.Drawing.Size(139, 37);
@@ -129,6 +136,58 @@
             this.refreshBTN.UseVisualStyleBackColor = true;
             this.refreshBTN.Click += new System.EventHandler(this.refreshBTN_Click);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(747, 687);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(139, 37);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // txtTenGV
+            // 
+            this.txtTenGV.Location = new System.Drawing.Point(442, 155);
+            this.txtTenGV.Name = "txtTenGV";
+            this.txtTenGV.Size = new System.Drawing.Size(118, 22);
+            this.txtTenGV.TabIndex = 9;
+            // 
+            // txtGioiTinh
+            // 
+            this.txtGioiTinh.Location = new System.Drawing.Point(665, 155);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(118, 22);
+            this.txtGioiTinh.TabIndex = 10;
+            // 
+            // txtNgaySinh
+            // 
+            this.txtNgaySinh.Location = new System.Drawing.Point(876, 155);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(118, 22);
+            this.txtNgaySinh.TabIndex = 11;
+            // 
+            // txtHocVan
+            // 
+            this.txtHocVan.Location = new System.Drawing.Point(876, 229);
+            this.txtHocVan.Name = "txtHocVan";
+            this.txtHocVan.Size = new System.Drawing.Size(118, 22);
+            this.txtHocVan.TabIndex = 12;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(442, 229);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(118, 22);
+            this.txtDiaChi.TabIndex = 13;
+            // 
+            // txtDayMon
+            // 
+            this.txtDayMon.Location = new System.Drawing.Point(665, 229);
+            this.txtDayMon.Name = "txtDayMon";
+            this.txtDayMon.Size = new System.Drawing.Size(118, 22);
+            this.txtDayMon.TabIndex = 14;
+            // 
             // frmQLGiaoVien
             // 
             this.AcceptButton = this.btnGVTimKiem;
@@ -136,7 +195,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
             this.CancelButton = this.btnGVQuayLai;
-            this.ClientSize = new System.Drawing.Size(1684, 932);
+            this.ClientSize = new System.Drawing.Size(1702, 932);
+            this.Controls.Add(this.txtDayMon);
+            this.Controls.Add(this.txtDiaChi);
+            this.Controls.Add(this.txtHocVan);
+            this.Controls.Add(this.txtNgaySinh);
+            this.Controls.Add(this.txtGioiTinh);
+            this.Controls.Add(this.txtTenGV);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.refreshBTN);
             this.Controls.Add(this.dgvGiaoVien);
             this.Controls.Add(this.btnGVXoa);
@@ -166,5 +232,12 @@
         private System.Windows.Forms.Button btnGVThem;
         private System.Windows.Forms.Button btnGVXoa;
         private System.Windows.Forms.Button refreshBTN;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox txtTenGV;
+        private System.Windows.Forms.TextBox txtGioiTinh;
+        private System.Windows.Forms.TextBox txtNgaySinh;
+        private System.Windows.Forms.TextBox txtHocVan;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtDayMon;
     }
 }
