@@ -34,7 +34,7 @@ namespace Giao_dien
             }
             else
             {
-                this.Text = "Cập nhật thông tin sinh viên";
+                this.Text = "Cập nhật thông tin giáo viên";
 
                 var r = new CSDL().Select(string.Format("selectGVById '" + mgv + "'"));
 
@@ -51,7 +51,9 @@ namespace Giao_dien
                 }
                 txtHocVan.Text = r["HocVan"].ToString();
                 txtDayMon.Text = r["DayMon"].ToString();
-
+                string maLop = r["MaLop"].ToString();
+                cbMaLop.SelectedValue = maLop;
+                //cbMaLop.SelectedIndex();
             }
         }
 

@@ -77,22 +77,13 @@ namespace Giao_dien
                 db.del_data(idGV);
                 MessageBox.Show("Đã xóa giáo viên : " + tenGV);
             }
-            clearData();
             LoadDSGV();
 
         }
 
 
 
-        public void clearData()
-        {
-            txtTenGV.Text = "";
-            txtHocVan.Text = "";
-            txtGioiTinh.Text = "";
-            txtDiaChi.Text = "";
-            txtDayMon.Text = "";
-            txtNgaySinh.Text = "";  
-        }
+        
 
         class GiaoVien
         {
@@ -109,100 +100,10 @@ namespace Giao_dien
             public string MaLop { get; set; }
         }
 
-        private void dgvGiaoVien_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            
-        }
+       
 
-        private void dgvGiaoVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (dgvGiaoVien.CurrentRow.Index != -1)
-                {
-                    GiaoVien gv = new GiaoVien();
-                    gv.maGV = dgvGiaoVien.CurrentRow.Cells[0].Value.ToString();
-                    txtTenGV.Text = dgvGiaoVien.CurrentRow.Cells[1].Value.ToString();
-                    gv.NgaySinh = DateTime.ParseExact(dgvGiaoVien.CurrentRow.Cells[2].Value.ToString().ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    txtNgaySinh.Value = gv.NgaySinh;
-                    txtDiaChi.Text = dgvGiaoVien.CurrentRow.Cells[3].Value.ToString();
-                    txtGioiTinh.Text = dgvGiaoVien.CurrentRow.Cells[4].Value.ToString();
-                    txtDayMon.Text = dgvGiaoVien.CurrentRow.Cells[5].Value.ToString();
-                    txtHocVan.Text = dgvGiaoVien.CurrentRow.Cells[6].Value.ToString();
-                    //gv.MaLop = dgvGiaoVien.CurrentRow.Cells[6].Value.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            var db = new CSDL();
-            string mgv = dgvGiaoVien.CurrentRow.Cells[0].Value.ToString();
-            string TenGV = txtTenGV.Text;
-            DateTime NgaySinh = txtNgaySinh.Value;
-            string DiaChi = txtDiaChi.Text;
-            string GioiTinh = txtGioiTinh.Text;
-            string HocVan = txtHocVan.Text;
-            string DayMon = txtDayMon.Text;
-            string MaLop = dgvGiaoVien.CurrentRow.Cells[6].Value.ToString();
-            
-            string sql = "UpdateGV";
-            List<CustomParameter> lstPara = new List<CustomParameter>();
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@MaGV",
-                value = mgv
-            });
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@TenGV",
-                value = TenGV
-            });
-
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@NS",
-                value = NgaySinh.ToString("yyyy-MM-dd")
-            });
-
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@DC",
-                value = DiaChi
-            });
-
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@GT",
-                value = GioiTinh
-            });
-
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@HocVan",
-                value = HocVan
-            });
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@DayMon",
-                value = DayMon
-            });
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@MaLop",
-                value = MaLop
-            });
-
-            var rs = new CSDL().ExeCute(sql, lstPara);
-            if (rs == 1)
-            {
-                MessageBox.Show("Cập nhật thành công");
-                this.Dispose();
-            }
-        }
+        
     }
 }

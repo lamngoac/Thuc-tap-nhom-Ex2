@@ -94,10 +94,10 @@
             this.dgvGiaoVien.RowHeadersWidth = 51;
             this.dgvGiaoVien.Size = new System.Drawing.Size(1287, 315);
             this.dgvGiaoVien.TabIndex = 3;
-            this.dgvGiaoVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoVien_CellClick);
+           
             this.dgvGiaoVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoVien_CellContentClick);
             this.dgvGiaoVien.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoVien_CellDoubleClick);
-            this.dgvGiaoVien.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGiaoVien_RowHeaderMouseClick);
+            
             // 
             // btnGVThem
             // 
