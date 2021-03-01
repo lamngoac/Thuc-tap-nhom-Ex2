@@ -64,5 +64,65 @@ namespace Giao_dien
                 LoadDSGV();
             }
         }
+
+        private void btnGVXoa_Click(object sender, EventArgs e)
+        {
+            var db = new CSDL();
+            if (MessageBox.Show("Bạn muốn xóa học sinh " + dgvGiaoVien.CurrentRow.Cells["Tên GV"].Value.ToString() + " ?", "Warning!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+
+                var tenGV = dgvGiaoVien.CurrentRow.Cells["Tên GV"].Value.ToString();
+                var idGV = dgvGiaoVien.CurrentRow.Cells["Mã GV"].Value.ToString();
+                db.del_data(idGV);
+                MessageBox.Show("Đã xóa giáo viên : " + tenGV);
+            }
+            clearData();
+            LoadDSGV();
+
+        }
+
+
+
+        public void clearData()
+        {
+            //var r = new CSDL().Select(string.Format("selectGVById '" + mgv + "'"));
+            //dtpGiaoVien.Value = DateTime.ParseExact(r["NgaySinh"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            //if (txtTenGV.Text != "" && )
+            txtTenGV.Text = "";
+            txtHocVan.Text = "";
+            txtGioiTinh.Text = "";
+            txtDiaChi.Text = "";
+            txtDayMon.Text = "";
+            dtpGiaoVien.Value = new DateTime(1, 1, 2000);   
+        }
+
+        
+
+        private void dgvGiaoVien_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (dgvGiaoVien.CurrentRow.Index != -1)
+                {
+                    string maGV = dgvGiaoVien.CurrentRow.Cells[0].Value.ToString();
+                    txtTenGV.Text = dgvGiaoVien.CurrentRow.Cells[1].Value.ToString();
+
+                    //dgvGiaoVien.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+                    //dgvGiaoVien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+                    //dgvGiaoVien.Columns["GioiTinh"].HeaderText = "Giới Tính";
+                    //dgvGiaoVien.Columns["HocVan"].HeaderText = "Học Vấn";
+                    //dtpGiaoVien.Value = DateTime.ParseExact(r["NgaySinh"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    dtpGiaoVien.Value =
+                    //txtTensv.Text = dgvGiaoVien.CurrentRow.Cells[1].Value.ToString();
+                    //txtNgaysinh.Text = dgvGiaoVien.CurrentRow.Cells[2].Value.ToString();
+                    //txtDiachi.Text = dgvGiaoVien.CurrentRow.Cells[3].Value.ToString();
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

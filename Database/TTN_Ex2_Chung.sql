@@ -15,7 +15,7 @@ create table GIAOVIEN(
 	DiaChi nvarchar(50),
 	DayMon nvarchar(50),
 	HocVan nvarchar(50),
-	MaLop char(10) references LOP(MaLop)
+	MaLop char(10) references LOP(MaLop) ON DELETE CASCADE
 )
 
 create table HOCSINH(
@@ -24,7 +24,7 @@ create table HOCSINH(
 	GioiTinh char(3) check(GioiTinh in ('Nam','Nu')),
 	NgaySinh datetime,
 	DiaChi nvarchar(50),
-	MaLop char(10) references LOP(MaLop)
+	MaLop char(10) references LOP(MaLop) ON DELETE CASCADE
 )
 
 select * from LOP;
@@ -94,9 +94,9 @@ as
 	select MaGV,TenGV, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh, HocVan, DayMon,MaLop
 	from GIAOVIEN 
 go
-exec selectALlGV
+exec selectAllGV
 
-alter procedure selectGVByID @MaGV char(10)
+create procedure selectGVByID @MaGV char(10)
 as
 begin
 	select MaGV,TenGV, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh, HocVan, DayMon,MaLop
@@ -177,6 +177,7 @@ insert into HOCSINH
 end
 
 /* GIAO VIEN*/
+/*
 create trigger deleteGV
 on GIAOVIEN
 for delete
@@ -186,7 +187,7 @@ begin
 	where MaLop = deleted
 
 end
-
+*/
 
 create procedure UpdateGV
 	@MaGV char(10),

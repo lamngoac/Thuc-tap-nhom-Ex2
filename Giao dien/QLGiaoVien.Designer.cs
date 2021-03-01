@@ -39,10 +39,10 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtTenGV = new System.Windows.Forms.TextBox();
             this.txtGioiTinh = new System.Windows.Forms.TextBox();
-            this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.txtHocVan = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtDayMon = new System.Windows.Forms.TextBox();
+            this.dtpGiaoVien = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +103,7 @@
             this.dgvGiaoVien.TabIndex = 3;
             this.dgvGiaoVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoVien_CellContentClick);
             this.dgvGiaoVien.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoVien_CellDoubleClick);
+            this.dgvGiaoVien.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGiaoVien_RowHeaderMouseClick);
             // 
             // btnGVThem
             // 
@@ -124,6 +125,7 @@
             this.btnGVXoa.TabIndex = 5;
             this.btnGVXoa.Text = "Xóa";
             this.btnGVXoa.UseVisualStyleBackColor = true;
+            this.btnGVXoa.Click += new System.EventHandler(this.btnGVXoa_Click);
             // 
             // refreshBTN
             // 
@@ -160,13 +162,6 @@
             this.txtGioiTinh.Size = new System.Drawing.Size(118, 22);
             this.txtGioiTinh.TabIndex = 10;
             // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.Location = new System.Drawing.Point(876, 155);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(118, 22);
-            this.txtNgaySinh.TabIndex = 11;
-            // 
             // txtHocVan
             // 
             this.txtHocVan.Location = new System.Drawing.Point(876, 229);
@@ -188,6 +183,15 @@
             this.txtDayMon.Size = new System.Drawing.Size(118, 22);
             this.txtDayMon.TabIndex = 14;
             // 
+            // dtpGiaoVien
+            // 
+            this.dtpGiaoVien.CustomFormat = "dd/MM/yyyy";
+            this.dtpGiaoVien.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpGiaoVien.Location = new System.Drawing.Point(876, 155);
+            this.dtpGiaoVien.Name = "dtpGiaoVien";
+            this.dtpGiaoVien.Size = new System.Drawing.Size(200, 22);
+            this.dtpGiaoVien.TabIndex = 15;
+            // 
             // frmQLGiaoVien
             // 
             this.AcceptButton = this.btnGVTimKiem;
@@ -196,10 +200,10 @@
             this.BackColor = System.Drawing.Color.Plum;
             this.CancelButton = this.btnGVQuayLai;
             this.ClientSize = new System.Drawing.Size(1702, 932);
+            this.Controls.Add(this.dtpGiaoVien);
             this.Controls.Add(this.txtDayMon);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtHocVan);
-            this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.txtTenGV);
             this.Controls.Add(this.btnUpdate);
@@ -235,9 +239,9 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtTenGV;
         private System.Windows.Forms.TextBox txtGioiTinh;
-        private System.Windows.Forms.TextBox txtNgaySinh;
         private System.Windows.Forms.TextBox txtHocVan;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtDayMon;
+        private System.Windows.Forms.DateTimePicker dtpGiaoVien;
     }
 }
