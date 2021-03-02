@@ -41,3 +41,18 @@ C:\Users\HP\Desktop\GIT\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.G
 C:\Users\HP\Desktop\GIT\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.CoreCompileInputs.cache
 C:\Users\HP\Desktop\GIT\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.exe
 C:\Users\HP\Desktop\GIT\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe.config
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.pdb
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csprojAssemblyReference.cache
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmDangNhap.resources
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.Properties.Resources.resources
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLGiaoVien.resources
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLHocSinh.resources
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQuanLy.resources
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemGiaoVien.resources
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemHocSinh.resources
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.GenerateResource.cache
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.CoreCompileInputs.cache
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.exe
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
