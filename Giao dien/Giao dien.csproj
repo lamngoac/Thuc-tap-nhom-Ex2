@@ -54,6 +54,12 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchOut.Designer.cs">
+      <DependentUpon>SearchOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy.resx">
       <DependentUpon>QuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchOut.resx">
+      <DependentUpon>SearchOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemGiaoVien.resx">
       <DependentUpon>ThemGiaoVien.cs</DependentUpon>

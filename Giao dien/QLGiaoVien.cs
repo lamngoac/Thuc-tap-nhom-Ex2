@@ -64,5 +64,10 @@ namespace Giao_dien
                 LoadDSGV();
             }
         }
+
+        private void btnGVTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

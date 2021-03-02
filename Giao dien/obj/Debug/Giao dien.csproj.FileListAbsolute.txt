@@ -56,3 +56,4 @@ D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.GenerateRe
 D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.CoreCompileInputs.cache
 D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.exe
 D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.SearchOut.resources

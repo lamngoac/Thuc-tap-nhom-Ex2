@@ -66,5 +66,65 @@ namespace Giao_dien
          
             LoadHS();
         }
+
+        private void resetValue()
+        {
+            txbHSThongTin.Text = "";
+        }
+
+
+        private void btnHSTimKiem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbHSThongTin.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (cbbHSDanhSach.SelectedIndex != -1)
+                {
+                    String valueSearch = txbHSThongTin.Text;
+                    var db = new CSDL();
+                    String sqlSearch = "";
+                    if (cbbHSDanhSach.SelectedIndex == 0)
+                    {
+                        sqlSearch = "exec searchMHS '" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOut(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (cbbHSDanhSach.SelectedIndex == 1)
+                    {
+                        sqlSearch = "exec searchTHS N'" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOut(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (cbbHSDanhSach.SelectedIndex == 2)
+                    {
+                        sqlSearch = "exec searchHSfromML N'" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOut(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                resetValue();
+            }
+        }
     }
 }

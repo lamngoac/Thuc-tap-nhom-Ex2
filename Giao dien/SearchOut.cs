@@ -29,8 +29,8 @@ namespace Giao_dien
         {
             dvgSearch.DataSource = null;
             dvgSearch.DataSource = new CSDL().SelectData(sqlSearch);
-            dvgSearch.Columns["MaNV"].HeaderText = "Mã HS";
-            dvgSearch.Columns["TenNV"].HeaderText = "Tên HS";
+            dvgSearch.Columns["MaHS"].HeaderText = "Mã HS";
+            dvgSearch.Columns["TenHS"].HeaderText = "Tên HS";
             dvgSearch.Columns["GioiTinh"].HeaderText = "Giới Tính";
             dvgSearch.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
             dvgSearch.Columns["DiaChi"].HeaderText = "Địa Chỉ";
