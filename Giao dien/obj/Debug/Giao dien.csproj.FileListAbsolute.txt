@@ -57,3 +57,4 @@ D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.CoreCompil
 D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.exe
 D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
 D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.SearchOut.resources
+D:\thuctapnhom\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.SearchOutGV.resources

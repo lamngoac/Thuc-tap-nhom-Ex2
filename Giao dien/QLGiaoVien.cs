@@ -65,9 +65,63 @@ namespace Giao_dien
             }
         }
 
+        private void resetValue()
+        {
+            txbGVThongTin.Text = "";
+        }
+
         private void btnGVTimKiem_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(txbGVThongTin.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (cbbGVDanhSach.SelectedIndex != -1)
+                {
+                    String valueSearch = txbGVThongTin.Text;
+                    var db = new CSDL();
+                    String sqlSearch = "";
+                    if (cbbGVDanhSach.SelectedIndex == 0)
+                    {
+                        sqlSearch = "exec searchMGV '" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOutGV(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (cbbGVDanhSach.SelectedIndex == 1)
+                    {
+                        sqlSearch = "exec searchTGV N'" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOutGV(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else if (cbbGVDanhSach.SelectedIndex == 2)
+                    {
+                        sqlSearch = "exec searchGVfromML N'" + valueSearch + "'";
+                        if (db.SelectData(sqlSearch).Rows.Count != 0)
+                        {
+                            new SearchOutGV(sqlSearch).Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                resetValue();
+            }
         }
     }
 }
