@@ -46,24 +46,27 @@
             "Mã giáo viên",
             "Tên giáo viên",
             "Mã lớp dạy"});
-            this.cbbGVDanhSach.Location = new System.Drawing.Point(164, 46);
+            this.cbbGVDanhSach.Location = new System.Drawing.Point(219, 57);
+            this.cbbGVDanhSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbbGVDanhSach.Name = "cbbGVDanhSach";
-            this.cbbGVDanhSach.Size = new System.Drawing.Size(121, 21);
+            this.cbbGVDanhSach.Size = new System.Drawing.Size(160, 24);
             this.cbbGVDanhSach.TabIndex = 0;
             // 
             // txbGVThongTin
             // 
             this.txbGVThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbGVThongTin.Location = new System.Drawing.Point(352, 44);
+            this.txbGVThongTin.Location = new System.Drawing.Point(469, 54);
+            this.txbGVThongTin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbGVThongTin.Name = "txbGVThongTin";
-            this.txbGVThongTin.Size = new System.Drawing.Size(314, 23);
+            this.txbGVThongTin.Size = new System.Drawing.Size(417, 26);
             this.txbGVThongTin.TabIndex = 1;
             // 
             // btnGVTimKiem
             // 
-            this.btnGVTimKiem.Location = new System.Drawing.Point(743, 40);
+            this.btnGVTimKiem.Location = new System.Drawing.Point(991, 49);
+            this.btnGVTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGVTimKiem.Name = "btnGVTimKiem";
-            this.btnGVTimKiem.Size = new System.Drawing.Size(104, 30);
+            this.btnGVTimKiem.Size = new System.Drawing.Size(139, 37);
             this.btnGVTimKiem.TabIndex = 2;
             this.btnGVTimKiem.Text = "Tìm kiếm";
             this.btnGVTimKiem.UseVisualStyleBackColor = true;
@@ -73,9 +76,10 @@
             // 
             this.btnGVQuayLai.BackColor = System.Drawing.Color.Crimson;
             this.btnGVQuayLai.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnGVQuayLai.Location = new System.Drawing.Point(1117, 40);
+            this.btnGVQuayLai.Location = new System.Drawing.Point(1489, 49);
+            this.btnGVQuayLai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGVQuayLai.Name = "btnGVQuayLai";
-            this.btnGVQuayLai.Size = new System.Drawing.Size(104, 30);
+            this.btnGVQuayLai.Size = new System.Drawing.Size(139, 37);
             this.btnGVQuayLai.TabIndex = 6;
             this.btnGVQuayLai.Text = "Quay lại";
             this.btnGVQuayLai.UseVisualStyleBackColor = false;
@@ -85,19 +89,21 @@
             // 
             this.dgvGiaoVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGiaoVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGiaoVien.Location = new System.Drawing.Point(164, 239);
+            this.dgvGiaoVien.Location = new System.Drawing.Point(219, 294);
+            this.dgvGiaoVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvGiaoVien.Name = "dgvGiaoVien";
             this.dgvGiaoVien.RowHeadersWidth = 51;
-            this.dgvGiaoVien.Size = new System.Drawing.Size(965, 256);
+            this.dgvGiaoVien.Size = new System.Drawing.Size(1287, 315);
             this.dgvGiaoVien.TabIndex = 3;
             this.dgvGiaoVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoVien_CellContentClick);
             this.dgvGiaoVien.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoVien_CellDoubleClick);
             // 
             // btnGVThem
             // 
-            this.btnGVThem.Location = new System.Drawing.Point(336, 586);
+            this.btnGVThem.Location = new System.Drawing.Point(448, 721);
+            this.btnGVThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGVThem.Name = "btnGVThem";
-            this.btnGVThem.Size = new System.Drawing.Size(104, 30);
+            this.btnGVThem.Size = new System.Drawing.Size(139, 37);
             this.btnGVThem.TabIndex = 4;
             this.btnGVThem.Text = "Thêm";
             this.btnGVThem.UseVisualStyleBackColor = true;
@@ -105,18 +111,21 @@
             // 
             // btnGVXoa
             // 
-            this.btnGVXoa.Location = new System.Drawing.Point(796, 586);
+            this.btnGVXoa.Location = new System.Drawing.Point(1061, 721);
+            this.btnGVXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGVXoa.Name = "btnGVXoa";
-            this.btnGVXoa.Size = new System.Drawing.Size(104, 30);
+            this.btnGVXoa.Size = new System.Drawing.Size(139, 37);
             this.btnGVXoa.TabIndex = 5;
             this.btnGVXoa.Text = "Xóa";
             this.btnGVXoa.UseVisualStyleBackColor = true;
+            this.btnGVXoa.Click += new System.EventHandler(this.btnGVXoa_Click);
             // 
             // refreshBTN
             // 
-            this.refreshBTN.Location = new System.Drawing.Point(886, 40);
+            this.refreshBTN.Location = new System.Drawing.Point(1181, 49);
+            this.refreshBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.refreshBTN.Name = "refreshBTN";
-            this.refreshBTN.Size = new System.Drawing.Size(104, 30);
+            this.refreshBTN.Size = new System.Drawing.Size(139, 37);
             this.refreshBTN.TabIndex = 7;
             this.refreshBTN.Text = "Làm Mới";
             this.refreshBTN.UseVisualStyleBackColor = true;
@@ -125,11 +134,11 @@
             // frmQLGiaoVien
             // 
             this.AcceptButton = this.btnGVTimKiem;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
             this.CancelButton = this.btnGVQuayLai;
-            this.ClientSize = new System.Drawing.Size(1203, 716);
+            this.ClientSize = new System.Drawing.Size(1604, 881);
             this.Controls.Add(this.refreshBTN);
             this.Controls.Add(this.dgvGiaoVien);
             this.Controls.Add(this.btnGVXoa);
@@ -138,6 +147,7 @@
             this.Controls.Add(this.btnGVTimKiem);
             this.Controls.Add(this.txbGVThongTin);
             this.Controls.Add(this.cbbGVDanhSach);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmQLGiaoVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý giáo viên";

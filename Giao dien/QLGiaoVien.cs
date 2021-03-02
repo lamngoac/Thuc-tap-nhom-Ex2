@@ -36,7 +36,9 @@ namespace Giao_dien
             dgvGiaoVien.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
             dgvGiaoVien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
             dgvGiaoVien.Columns["GioiTinh"].HeaderText = "Giới Tính";
+            dgvGiaoVien.Columns["DayMon"].HeaderText = "Dạy Môn";
             dgvGiaoVien.Columns["HocVan"].HeaderText = "Học Vấn";
+            dgvGiaoVien.Columns["MaLop"].HeaderText = "Mã Lớp";
 
         }
 
@@ -122,6 +124,19 @@ namespace Giao_dien
                 }
                 resetValue();
             }
+        }
+
+        private void btnGVXoa_Click(object sender, EventArgs e)
+        {
+            var db = new CSDL();
+            if (MessageBox.Show("Bạn muốn xóa học sinh " + dgvGiaoVien.CurrentRow.Cells["TenGV"].Value.ToString() + " ?", "Warning!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                var tenGV = dgvGiaoVien.CurrentRow.Cells["TenGV"].Value.ToString();
+                var idGV = dgvGiaoVien.CurrentRow.Cells["MaGV"].Value.ToString();
+                db.del_data(idGV);
+                MessageBox.Show("Đã xóa giáo viên : " + tenGV);
+            }
+            LoadDSGV();
         }
     }
 }

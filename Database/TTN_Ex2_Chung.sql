@@ -177,7 +177,7 @@ insert into HOCSINH
 end
 
 
-alter procedure UpdateHS
+create procedure UpdateHS
 	@MaHS char(10),
 	@TenHS nvarchar(45),
 	@NS datetime,
@@ -232,7 +232,7 @@ exec searchTHS N'Vũ Anh Tú'
 go
 
 --MaLop--
-alter procedure searchHSfromML @MaLop char(10)
+create procedure searchHSfromML @MaLop char(10)
 as 
 begin
 	select distinct hs.MaHS, hs.TenHS, convert(varchar(10),hs.NgaySinh,103) 
@@ -275,7 +275,7 @@ exec searchTGV N'Bùi Tiến Dũng'
 go
 
 --MaLop--
-alter procedure searchGVfromML @MaLop char(10)
+create procedure searchGVfromML @MaLop char(10)
 as 
 begin
 	select distinct gv.MaGV, gv.TenGV, convert(varchar(10),gv.NgaySinh,103) 
@@ -285,3 +285,31 @@ begin
 end
 go
 exec searchGVfromML 'LP0001'
+
+
+
+create procedure UpdateGV
+	@MaGV char(10),
+	@TenGV nvarchar(50),
+	@GT char(3),
+	@NS datetime,
+	@DC nvarchar(50),
+	@DayMon nvarchar(50),
+	@HocVan nvarchar(50),
+	@MaLop char(10)
+as 
+begin
+	update GIAOVIEN
+	set 
+		TenGV = @TenGV,
+		GioiTinh = @GT,
+		NgaySinh = @NS,
+		DiaChi = @DC,
+		DayMon = @DayMon,
+		HocVan = @HocVan,
+		MaLop = @MaLop
+	where MaGV = @MaGV;
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end

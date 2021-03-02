@@ -51,7 +51,8 @@ namespace Giao_dien
                 }
                 txtHocVan.Text = r["HocVan"].ToString();
                 txtDayMon.Text = r["DayMon"].ToString();
-
+                string maLop = r["MaLop"].ToString();
+                cbMaLop.SelectedValue = maLop;
             }
         }
 
