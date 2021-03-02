@@ -199,3 +199,89 @@ begin
 		else begin return 0 end;
 
 end
+
+
+
+
+----------Tim kiem HS--------
+--MaHS--
+create procedure searchMHS @MaHS char(10)
+as 
+begin
+	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) 
+	as NgaySinh, DiaChi, GioiTinh, MaLop 
+	from HOCSINH
+	where MaHS = @MaHS
+end
+go
+exec searchMHS 'HS0007'
+
+go
+--TenHS--
+create procedure searchTHS @TenHS nvarchar(50)
+as 
+begin
+	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) 
+	as NgaySinh, DiaChi, GioiTinh, MaLop 
+	from HOCSINH
+	where TenHS = @TenHS
+end
+go
+exec searchTHS N'Vũ Anh Tú'
+
+go
+
+--MaLop--
+alter procedure searchHSfromML @MaLop char(10)
+as 
+begin
+	select distinct hs.MaHS, hs.TenHS, convert(varchar(10),hs.NgaySinh,103) 
+	as NgaySinh, hs.DiaChi, hs.GioiTinh, hs.MaLop
+	from HOCSINH as hs, LOP as lh
+	where hs.MaLop = @MaLop
+end
+go
+exec searchHSfromML 'LP0001'
+
+
+----------Tim kiem GV--------
+
+select * from GIAOVIEN
+--MaGV--
+create procedure searchMGV @MaGV char(10)
+as 
+begin
+	select MaGV, TenGV, convert(varchar(10),NgaySinh,103) 
+	as NgaySinh, DiaChi, GioiTinh, DayMon, HocVan, MaLop
+	from GIAOVIEN
+	where MaGV = @MaGV
+end
+go
+exec searchMGV 'GV0007'
+
+go
+--TenGV--
+create procedure searchTGV @TenGV nvarchar(50)
+as 
+begin
+	select MaGV, TenGV, convert(varchar(10),NgaySinh,103) 
+	as NgaySinh, DiaChi, GioiTinh, DayMon, HocVan, MaLop
+	from GIAOVIEN
+	where TenGV = @TenGV
+end
+go
+exec searchTGV N'Bùi Tiến Dũng'
+
+go
+
+--MaLop--
+alter procedure searchGVfromML @MaLop char(10)
+as 
+begin
+	select distinct gv.MaGV, gv.TenGV, convert(varchar(10),gv.NgaySinh,103) 
+	as NgaySinh, gv.DiaChi, gv.GioiTinh, gv.DayMon, gv.HocVan, gv.MaLop
+	from GIAOVIEN as gv, LOP as lh
+	where gv.MaLop = @MaLop
+end
+go
+exec searchGVfromML 'LP0001'
