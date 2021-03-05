@@ -12,7 +12,7 @@ namespace Giao_dien
     public class CSDL
     {
 
-        private string connectionString = "Data Source=DESKTOP-PI3DN05;Initial Catalog=TTN_Ex2;Trusted_Connection=Yes;";
+        private string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=TTN_Ex2;Trusted_Connection=Yes;";
         private SqlConnection conn;
 
         //private string sql;
@@ -125,8 +125,29 @@ namespace Giao_dien
             return check;
         }
 
+        public bool del_dataLop(String maLop)
+        {
+            bool check = false;
+            try
+            {
+                conn.Open();
+                string sql = "DELETE From LOP where MaLop = '" + maLop + "'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                check = true;
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                check = false;
+                throw;
+            }
 
-        public Boolean del_dataHS(String mahs)
+
+            return check;
+        }
+
+        public bool del_dataHS(string mahs)
         {
             bool check = false;
             try
@@ -145,6 +166,23 @@ namespace Giao_dien
             }
 
 
+            return check;
+        }
+
+        public bool executeNonQuery(string sql)
+        {
+            bool check = true; ;
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                check = false;
+            }
             return check;
         }
     }

@@ -28,5 +28,10 @@ namespace Giao_dien
             frmQLGiaoVien qlGiaoVien = new frmQLGiaoVien();
             qlGiaoVien.Visible = true;
         }
+
+        private void pnLop_Click(object sender, EventArgs e)
+        {
+            new frmQLLop().Visible = true;
+        }
     }
 }
