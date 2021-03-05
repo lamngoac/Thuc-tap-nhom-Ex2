@@ -75,3 +75,22 @@ E:\1 school\1 ki 6\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
 E:\1 school\1 ki 6\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe.config
 E:\1 school\1 ki 6\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe
 E:\1 school\1 ki 6\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.pdb
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe.config
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.pdb
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmDangNhap.resources
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.Properties.Resources.resources
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLGiaoVien.resources
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLHocSinh.resources
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQuanLy.resources
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.SearchOut.resources
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.SearchOutGV.resources
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemGiaoVien.resources
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemHocSinh.resources
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.exe
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLLop.resources
+C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemLop.resources

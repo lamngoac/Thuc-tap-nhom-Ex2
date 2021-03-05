@@ -54,6 +54,12 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQLLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLLop.Designer.cs">
+      <DependentUpon>frmQLLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchOut.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,8 +104,17 @@
     <Compile Include="ThemHocSinh.Designer.cs">
       <DependentUpon>ThemHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemLop.Designer.cs">
+      <DependentUpon>ThemLop.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLLop.resx">
+      <DependentUpon>frmQLLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemHocSinh.resx">
       <DependentUpon>ThemHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemLop.resx">
+      <DependentUpon>ThemLop.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
