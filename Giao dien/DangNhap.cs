@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -41,7 +42,7 @@ namespace Giao_dien
 
         private void lilbAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Hướng dẫn ở đây");
+            Process.Start(Application.StartupPath + "\\huong_dan\\index.html");
         }
     }
 }

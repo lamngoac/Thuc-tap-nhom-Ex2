@@ -94,3 +94,9 @@ C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.exe
 C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb
 C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLLop.resources
 C:\Users\Admin\source\repos\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemLop.resources
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLLop.resources
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.SearchOut.resources
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.SearchOutGV.resources
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemGiaoVien.resources
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemHocSinh.resources
+E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemLop.resources

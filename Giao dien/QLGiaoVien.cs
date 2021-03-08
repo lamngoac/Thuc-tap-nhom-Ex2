@@ -129,7 +129,7 @@ namespace Giao_dien
         private void btnGVXoa_Click(object sender, EventArgs e)
         {
             var db = new CSDL();
-            if (MessageBox.Show("Bạn muốn xóa học sinh " + dgvGiaoVien.CurrentRow.Cells["TenGV"].Value.ToString() + " ?", "Warning!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn muốn xóa giáo viên " + dgvGiaoVien.CurrentRow.Cells["TenGV"].Value.ToString() + " ?", "Warning!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 var tenGV = dgvGiaoVien.CurrentRow.Cells["TenGV"].Value.ToString();
                 var idGV = dgvGiaoVien.CurrentRow.Cells["MaGV"].Value.ToString();
