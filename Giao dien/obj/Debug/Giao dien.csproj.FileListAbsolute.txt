@@ -100,3 +100,22 @@ E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.SearchOutG
 E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemGiaoVien.resources
 E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemHocSinh.resources
 E:\Thực tập nhóm\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemLop.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe.config
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.exe
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\bin\Debug\Giao dien.pdb
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csprojAssemblyReference.cache
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmDangNhap.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLLop.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.Properties.Resources.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLGiaoVien.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQLHocSinh.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.frmQuanLy.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.SearchOut.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.SearchOutGV.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemGiaoVien.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemHocSinh.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao_dien.ThemLop.resources
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.GenerateResource.cache
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.csproj.CoreCompileInputs.cache
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.exe
+D:\TTN-1\Thuc-tap-nhom-Ex2\Giao dien\obj\Debug\Giao dien.pdb

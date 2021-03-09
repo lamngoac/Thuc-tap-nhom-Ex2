@@ -1,4 +1,4 @@
-﻿use TTN_Ex2;
+use TTN_Ex2
 
 go
 
@@ -82,7 +82,9 @@ values('HS0007',N'Vũ Anh Tú',N'Nam','2000-03-31',N'Hà Nội','LP0002');
 
 select * from HOCSINH;
 
---select * from HOCSINH where MaLop = 'LP0001';
+select * from HOCSINH;
+select * from GIAOVIEN;
+select * from LOP;
 
 create sequence giaovienSeq
 	start with 1000 --bat dau tu 1000
@@ -92,9 +94,19 @@ create sequence giaovienSeq
 create procedure selectAllGV
 as
 	select MaGV,TenGV, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh, HocVan, DayMon,MaLop
-	from GIAOVIEN 
-go
+	from GIAOVIEN
+	
+--go
+
 exec selectALlGV
+
+create procedure selectGVByID @MaGV char(10)
+as
+begin
+	select distinct GV.MaGV, GV.TenGV, convert(varchar(10),GV.NgaySinh,103) as NgaySinh, GV.DiaChi, GV.GioiTinh, GV.HocVan
+	from GIAOVIEN GV
+	where GV.MaGV = @MaGV
+end
 
 alter procedure selectGVByID @MaGV char(10)
 as
@@ -105,6 +117,33 @@ begin
 end
 
 exec selectGVByID 'GV0001'
+
+create procedure ThemMoiGV
+	@MaGV char(10),
+	@TenGV nvarchar(50),
+	@NS datetime,
+	@DC nvarchar(50),
+	@GT char(3),
+	@HocVan nvarchar(50)
+
+as 
+begin
+	insert into GIAOVIEN
+	(
+		MaGV,TenGV,NgaySinh,DiaChi,GioiTinh,HocVan
+	)values(
+		'GV' + cast(next value for giaovienSeq as char(10)),
+		@TenGV,
+		@NS,
+		@DC,
+		@GT,
+		@HocVan
+		);
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+
 alter procedure ThemMoiGV
 	@TenGV nvarchar(50),
 	@NS datetime,
@@ -134,14 +173,30 @@ begin
 		else begin return 0 end;
 end
 
+create procedure selectAllHS
+as
+	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh
+	from HOCSINH
+go
 
 alter procedure selectAllHS
 as
 	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh,MaLop
 	from HOCSINH
 go
+
 exec selectAllHS
-go
+
+create procedure selectHSById @Ma char(10)
+as
+begin
+
+	select MaHS, TenHS, convert(varchar(10),NgaySinh,103) as NgaySinh, DiaChi, GioiTinh
+	from HOCSINH
+	where MaHS = @Ma
+
+end
+
 alter procedure selectHSById @Ma char(10)
 as
 begin
@@ -151,7 +206,29 @@ begin
 	where MaHS = @Ma
 
 end
-go
+
+create procedure ThemMoiHS 
+	@TenHS nvarchar(50),
+	@NS datetime,
+	@DC nvarchar(50),
+	@GT char(3)
+as
+begin
+insert into HOCSINH
+	(
+		MaHS,TenHS,NgaySinh,DiaChi,GioiTinh
+	)values(
+		'HS' + cast(next value for giaovienSeq as char(10)),
+		@TenHS,
+		@NS,
+		@DC,
+		@GT
+		);
+
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
+
 alter procedure ThemMoiHS 
 	@TenHS nvarchar(50),
 	@NS datetime,
@@ -176,7 +253,6 @@ insert into HOCSINH
 		else begin return 0 end;
 end
 
-
 create procedure UpdateHS
 	@MaHS char(10),
 	@TenHS nvarchar(45),
@@ -200,8 +276,31 @@ begin
 
 end
 
+create procedure UpdateGV
+	@MaGV char(10),
+	@TenGV nvarchar(50),
+	@GT char(3),
+	@NS datetime,
+	@DC nvarchar(50),
+	@DayMon nvarchar(50),
+	@HocVan nvarchar(50),
+	@MaLop char(10)
+as 
+begin
+	update GIAOVIEN
+	set 
+		TenGV = @TenGV,
+		GioiTinh = @GT,
+		NgaySinh = @NS,
+		DiaChi = @DC,
+		DayMon = @DayMon,
+		HocVan = @HocVan,
+		MaLop = @MaLop
+	where MaGV = @MaGV;
 
-
+		if @@ROWCOUNT > 0 begin return 1 end
+		else begin return 0 end;
+end
 
 ----------Tim kiem HS--------
 --MaHS--
@@ -285,31 +384,3 @@ begin
 end
 go
 exec searchGVfromML 'LP0001'
-
-
-
-create procedure UpdateGV
-	@MaGV char(10),
-	@TenGV nvarchar(50),
-	@GT char(3),
-	@NS datetime,
-	@DC nvarchar(50),
-	@DayMon nvarchar(50),
-	@HocVan nvarchar(50),
-	@MaLop char(10)
-as 
-begin
-	update GIAOVIEN
-	set 
-		TenGV = @TenGV,
-		GioiTinh = @GT,
-		NgaySinh = @NS,
-		DiaChi = @DC,
-		DayMon = @DayMon,
-		HocVan = @HocVan,
-		MaLop = @MaLop
-	where MaGV = @MaGV;
-
-		if @@ROWCOUNT > 0 begin return 1 end
-		else begin return 0 end;
-end
