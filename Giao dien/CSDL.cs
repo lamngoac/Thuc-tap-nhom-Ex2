@@ -12,7 +12,7 @@ namespace Giao_dien
     public class CSDL
     {
 
-        private string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=TTN_Ex2;Trusted_Connection=Yes;";
+        private string connectionString = "Data Source=DESKTOP-P5SQIP5;Initial Catalog=TTN_Ex2;Trusted_Connection=Yes;";
         private SqlConnection conn;
 
         //private string sql;
